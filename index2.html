@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+      /* body {
+        position: relative;
+      } */
+
+      ul.nav-pills {
+        top: 100px;
+        position: fixed;
+      }
+      img {
+        height: 300px;
+        width: auto;
+      }
+      /* div.col-sm-9 div {
+        height: 250px;
+        font-size: 28px;
+      } */
+      #section1 {
+               color: rgba(0, 0, 0, 0.84);
+        background-color:#fff;
+        height: 220px; 
+      }
+      #section2,
+      #section3,
+      #section4 {
+        color: rgba(0, 0, 0, 0.84);
+        background-color:#fff;
+        height: 500px;
+      }
+
+      @media screen and (max-width: 810px) {
+        #section1,
+        #section2,
+        #section3,
+        #section4 {
+          margin-left: 150px;
+        }
+        /* .navbar {
+          margin-left: 40px;
+        } */
+      }
+      @media screen and (min-width: 810px) {
+        .navbar {
+          margin-left: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-light bg-light navbar-fixed-top navbar-dark">
+        <a class="navbar-brand h1" href="#">MySQL</a>
+      </nav>
+    </div>
+    <div
+      class="container"
+      data-spy="scroll"
+      data-target="#myScrollspy"
+      data-offset="20"
+    >
+      <div class="row">
+        <nav class="col-sm-3" id="myScrollspy">
+          <ul class="nav nav-pills nav-stacked ">
+            <li class="nav-item">
+              <a class="nav-link" href="#section1">SQL et logiciel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section2">Installation du MySQL</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section3">Inastallation du logiciel</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section4">Exercices</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="col-sm-9">
+          <div id="section1">
+            <h2>SQL et logiciel</h2>
+
+            <p style="font-size:16px">
+              Le SQL est un langage informatique qui permet d'interagir avec des
+              bases de données relationnelles.
+            </p>
+            <p style="font-size:16px">
+              MySQL est un Système de Gestion de Bases de Données Relationnelles
+              qui utilise le langage SQL. C'est un des SGBD les plus utilisés.
+            </p>
+            <p style="font-size:16px">
+              Oracle database - payant, principalement utilisé par des
+              entreprises PostgreSQL - langage utilisé : PL/pgSQL
+            </p>
+            <p style="font-size:16px">
+              SQLite - il stocke toutes les données dans de simples fichiers et
+              il n'utilise pas le schéma client-serveur utilisé par la majorité
+              des SGBDR. Par conséquent, il est difficile de sécuriser le
+              système. Peu utilisé
+            </p>
+          </div>
+          <div id="section2">
+            <h2>Installation du MySQL</h2>
+            <p style="font-size:16px">
+              Pour télécharger MySQL, vous pouvez vous rendre sur le site
+              suivant :
+              <a href="http://dev.mysql.com/downloads/mysql/#downloads"
+                >http://dev.mysql.com/downloads/mysql/#downloads
+              </a>
+              <br />
+              L'installation est terminée mais pour pouvoir utiliser les
+              programmes clients de MySQL, il faut que l'invite de commande
+              sache où se trouvent ces programmes. On va donc ajouter le chemin
+              vers MySQL aux dossiers explorés par l'invite de commande. Voici
+              les lignes de commandes de cette configuratopn sous Mac OS. <br />
+              <pre><code class="bash">cd /usr/local/mysql
+sudo ./bin/mysqld_safe</code></pre>
+Tapez Ctrl + Z
+<pre><code class="bash">bg</code></pre>
+Tapez Ctrl + D 
+<pre><code class="bash">echo 'export PATH=/usr/local/mysql/bin:$PATH' >> ~/.profile
+</code></pre>
+<br>
+              Si jamais vous rencontriez des problèmes ou si vous utilisez
+              d'autres systèmes, je vous invite à consulter ce tuto
+              <a
+                href="https://openclassrooms.com/en/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1959969-installez-mysql#/id/r-2064496"
+              >
+                https://openclassrooms.com/en/courses/1959476-administrez-vos-bases-de-donnees-avec-mysql/1959969-installez-mysql#/id/r-2064496"</a
+              >
+              sur openclassroom.
+            </p>
+          </div>
+          <div id="section3">
+            <h2>Installation du logiciel</h2>
+            <p>
+              Il suffit d'aller au site officiel du MySQL et télécharger son outil en interface graphique proposé qui s'appelle MySQL Workbench <a href="https://dev.mysql.com/downloads/workbench/">https://dev.mysql.com/downloads/workbench/</a> <br> <br>
+              <img src="img/workbench.jpg" alt=""> <br> <br>
+              Et puis vous cliquez "Local instance" au dessous de "MySQL Connections" pour vous connecter à votre base de données et éventuellement configurer votre mot de passe.
+            </p>
+          </div>
+          <div id="section4">
+            <h2>Exercices</h2>
+            <h4>1. Créer une base de données</h4>
+            
+            <p>
+              Dans l'environnement de Workbench, cliquez l'icône suivante <br>
+              <img src="img/schema1.jpg" alt=""> <br>
+              OU <br> 
+              Ouvrir un nouveau Query Tab et tapez la ligne de commande suivante<br>
+              <img src="img/base.jpg" alt="">
+             <pre><code class="sql">CREATE DATABASE nom_base SET 'utf8';</code></pre>
+            </p>
+                        <h4>2. Créer une table</h4>
+                       <pre><code class="sql">
+-- création du tableau
+CREATE TABLE Gestionnaires (
+nom_gestionnaire VARCHAR(50) NOT NULL,
+adresse_gestionnaire VARCHAR(100) NOT NULL,
+PRIMARY KEY (nom_gestionnaire)
+)
+-- saisie des données pour le tableau Gestionnaire
+INSERT INTO Gestionnaires (nom_gestionnaire, adresse_gestionnaire) 
+VALUES ('caron', '12 bd blanqui'),
+('dubois', '121 rue de vaugirard'),
+('rocher', '45 rue buzenval'),
+('semin', '8 allee des haies');
+
+CREATE TABLE Clients (
+nom_client VARCHAR(50) NOT NULL,
+adresse_client VARCHAR(100) NOT NULL,
+PRIMARY KEY (nom_client)
+)
+
+INSERT INTO Clients 
+VALUES ('adam', '2 av de segur'),
+('curry', '10 rue des matins'),
+('martin', '24 rue linne'),
+('mathias', '23 rue barbes'),
+('simon', '26 bd raspail'),
+('valentin', '80 rue dunois');
+
+CREATE TABLE Personnel (
+nom VARCHAR(50) NOT NULL,
+num SMALLINT NOT NULL,
+fonction VARCHAR(50) NOT NULL,
+n_sup SMALLINT NOT NULL,
+embauche DATE,
+salaire MEDIUMINT NOT NULL,
+comm SMALLINT NOT NULL,
+n_dept SMALLINT NOT NULL,
+PRIMARY KEY (num)
+)
+
+INSERT INTO Personnel
+VALUES ('martin', 16712, 'directeur', 25718, '1990-05-23', 40000, 4000, 30),
+('dupont', 17574, 'administratif', 16712, '1995-05-03', 9000, 500, 30),
+('lambert', 25012, 'administratif', 27047, '1991-04-14', 12000, 150, 20),
+('dupond', 26691, 'commercial', 27047, '1988-04-04', 25000, 2500, 20);</code></pre>
+
+                        <h4>3. Exercices et réponses</h4>
+
+<pre><code class="sql">
+-- 3 et 4 BDD
+-- 3 sql intro 
+SELECT adresse_client
+FROM clients
+WHERE nom_client = 'simon';
+
+SELECT *
+FROM Comptes
+WHERE solde > 0;
+
+SELECT numero_compte
+FROM	Comptes
+WHERE nom_agence = 'jussieu';
+
+SELECT *
+FROM Comptes
+WHERE solde > 0 && nom_agence LIKE 'jussieu';
+
+-- 4 fonctionsAgreg
+-- nombre de clients
+SELECT COUNT(nom_client)
+FROM Clients;
+-- le solde moyen de tous les comptes
+SELECT AVG(solde)
+FROM Comptes;
+--  le solde moyen de tous les comptes de toutes les agences regroupes par gestionnaire
+SELECT AVG(solde), nom_gestionnaire
+FROM Comptes
+GROUP BY nom_gestionnaire;
+-- les soldes moyens superieurs a 300 regroupes par gestionnaire
+SELECT AVG(solde), nom_gestionnaire
+FROM Comptes
+GROUP BY nom_gestionnaire
+HAVING AVG(solde) > 300;
+
+
+-- personnel
+-- les employes gagnant plus que tous les employes du departement 20
+SELECT nom
+FROM Personnel
+WHERE salaire > ALL(
+SELECT salaire
+FROM Personnel
+WHERE n_dept = 20);
+
+-- Extraire le salaire de tous les employés du département 30 
+-- et après rechercher les employés qui gagnent plus que chacun de employés du département 30
+SELECT nom, salaire
+FROM Personnel
+WHERE n_dept = 30
+HAVING salaire > ANY(
+SELECT salaire
+FROM Personnel
+WHERE n_dept = 30);
+
+
+-- Liste des employés du département 20 ayant la même fonction qu’un employé du département de DUPONT.
+SELECT nom
+FROM Personnel
+WHERE n_dept = 20 AND fonction IN (
+SELECT fonction
+FROM Personnel
+WHERE n_dept = (
+SELECT n_dept
+FROM Personnel
+WHERE nom LIKE 'dupont')
+);
+
+-- Savoir le département de Dupont + connaître les fonctions des emplyés de ce département
+-- + extraire les employés qui ont les mêmes fonctions
+SELECT nom, fonction  
+FROM Personnel
+WHERE fonction IN (
+SELECT fonction
+FROM Personnel
+WHERE n_dept = (
+SELECT n_dept
+FROM Personnel
+WHERE nom LIKE 'dupont')
+);
+
+-- Donner pour chaque commercial son revenu (salaire+commission)
+SELECT nom, (salaire+ comm)
+FROM Personnel
+WHERE fonction = 'commercial';
+
+-- Donner la liste des employés dont la commission est inférieure à 5% du salaire
+SELECT nom
+FROM Personnel
+WHERE comm < (0.05 * salaire);
+
+-- Donner la liste des administratifs classée par commission sur salaire décroissant
+SELECT nom, comm/salaire, comm, salaire
+FROM Personnel
+WHERE fonction = 'administratif'
+ORDER BY comm/salaire DESC;</code></pre>
+ 
+            </p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
