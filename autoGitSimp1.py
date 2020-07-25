@@ -25,14 +25,13 @@ class Handler(FileSystemEventHandler):
 
 
 if __name__ == "__main__":
-    ## create the event handler
+    # create the event handler
     my_event_handler = Handler()
 
-    ## create an observer
-    path = "."
+    # create an observer
+    path = "./test"
     my_observer = Observer()
     my_observer.schedule(my_event_handler, path, recursive=True)
-
 
     my_observer.start()
     try:
