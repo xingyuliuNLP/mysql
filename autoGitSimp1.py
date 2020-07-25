@@ -4,7 +4,7 @@ from watchdog.events import FileSystemEventHandler
 import os
 
 
-class _Handler(FileSystemEventHandler):
+class Handler(FileSystemEventHandler):
     def on_any_event(self, event):
         if event.is_directory:
             return None
@@ -26,11 +26,10 @@ class _Handler(FileSystemEventHandler):
 
 if __name__ == "__main__":
     ## create the event handler
-    my_event_handler = _Handler()
+    my_event_handler = Handler()
 
     ## create an observer
     path = "."
-    go_recursively = True
     my_observer = Observer()
     my_observer.schedule(my_event_handler, path, recursive=True)
 
