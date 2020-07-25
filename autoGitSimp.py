@@ -42,7 +42,7 @@ if __name__ == "__main__":
     my_observer.start()
     try:
         while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
+            time.sleep(5)
+    except:
         my_observer.stop()
-        my_observer.join()
+    my_observer.join()
