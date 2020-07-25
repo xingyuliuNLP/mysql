@@ -25,13 +25,11 @@ def on_modified(event):
 
 # create the event handler
 if __name__ == "__main__":
-    patterns = "*"
-    ignore_patterns = "index.html"
+    patterns = ""
+    # ignore_patterns = ".git"
     ignore_directories = False
     case_sensitive = True
-    my_event_handler = PatternMatchingEventHandler(
-        patterns, ignore_patterns, ignore_directories, case_sensitive)
-
+    my_event_handler = PatternMatchingEventHandler(ignore_patterns=[".git"])
     my_event_handler.on_created = on_created
     my_event_handler.on_deleted = on_deleted
     my_event_handler.on_modified = on_modified
