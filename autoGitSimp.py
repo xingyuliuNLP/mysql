@@ -51,4 +51,5 @@ if __name__ == "__main__":
     except:
         my_observer.stop()
         print("Observer Stopped")
-    my_observer.join()
+    # wait until finished
+    # my_observer.join()
