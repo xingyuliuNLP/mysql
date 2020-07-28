@@ -25,18 +25,18 @@ def on_modified(event):
 
 # create the event handler
 if __name__ == "__main__":
-    # patterns = ""
-    # ignore_patterns = ""
-    # ignore_directories = False
-    # case_sensitive = True
-    my_event_handler = PatternMatchingEventHandler(ignore_patterns=["COMMIT_EDITMSG"])
+    patterns = "*"
+    ignore_patterns = ""
+    ignore_directories = False
+    case_sensitive = True
+    my_event_handler = PatternMatchingEventHandler(patterns, ignore_patterns, ignore_directories, case_sensitive)
 
     my_event_handler.on_created = on_created
     my_event_handler.on_deleted = on_deleted
     my_event_handler.on_modified = on_modified
 
 # create an observer
-    path = "."
+    path = "./main"
     go_recursively = True
     my_observer = Observer()
     my_observer.schedule(my_event_handler, path, recursive=go_recursively)
