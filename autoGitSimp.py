@@ -45,11 +45,11 @@ if __name__ == "__main__":
     my_observer.schedule(my_event_handler, path, recursive=go_recursively)
 
     my_observer.start()
-    try:
-        while True:
-            time.sleep(5)
-    except:
-        my_observer.stop()
-        print("Observer Stopped")
-    # wait until finished
-    # my_observer.join()
+    # try:
+    #     while True:
+    #         time.sleep(5)
+    # except:
+    #     my_observer.stop()
+    #     print("Observer Stopped")
+    # # wait until finished
+    my_observer.join()
